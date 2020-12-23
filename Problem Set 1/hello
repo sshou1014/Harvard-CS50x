@@ -1,0 +1,8 @@
+#include <stdio.h>
+#include <cs50.h>
+
+int main(void)
+{
+    string name = get_string("What is your name?\n"); //asks for the users name and stores it in a variable
+    printf("hello, %s\n", name); //prints out hello and then the user input
+}
