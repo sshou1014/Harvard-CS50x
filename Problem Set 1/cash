@@ -1,0 +1,54 @@
+//This program outputs an integer (number of coins based on 25 cents, 10 cents, 5 cents, 1 cent) based on the user input
+#include <stdio.h>
+#include <cs50.h>
+#include <math.h>
+
+int main(void)
+{
+
+    //Prompt user for dollar/cents amount
+    float change;
+    do
+    {
+        change = get_float("Change owed: ");
+    }
+    while (change < 0);
+
+    //Rounding the change to the nearest penny and multiplying it by 100 to work with whole numbers
+    int cents = round(change * 100); //this is also used as the variable that keeps track of the remaining amount after getting subtracted
+
+    int coins = 0; //create a coins variable to keep track of the number of coins subtracted from cents
+
+
+    //Loop that checks if change is divisible by 25
+    while (cents >= 25)
+    {
+        cents = cents - 25;
+        coins++;
+    }
+
+
+    //Loop that checks if change is divisible by 10
+    while (cents >= 10)
+    {
+        cents = cents - 10;
+        coins++;
+    }
+
+    //Loop that checks if change is divisible by 5
+    while (cents >= 5)
+    {
+        cents = cents - 5;
+        coins++;
+    }
+
+    //Loop that checks if change is divisible by 1
+    while (cents >= 1)
+    {
+        cents = cents - 1;
+        coins++;
+    }
+
+    printf("%d\n", coins);
+
+}
