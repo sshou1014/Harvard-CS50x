@@ -1,0 +1,33 @@
+import cs50
+
+text = cs50.get_string("Text: ")
+
+lettercount = 0
+wordcount = 1
+sentencecount = 0
+
+for i in range(len(text)):
+    if text[i].islower() or text[i].isupper():
+        lettercount += 1
+        
+    if str.isspace(text[i]):
+        wordcount += 1
+        
+    if text[i] == '.' or text[i] == '?' or text[i] == '!':
+        sentencecount += 1
+
+
+L = 100 * lettercount / wordcount
+S = 100 * sentencecount / wordcount
+index = round(0.0588 * L - 0.296 * S - 15.8)
+
+
+if index < 1:
+    print("Before Grade 1")
+    
+elif index >= 16:
+    print("Grade 16+")
+    
+else:
+    print(f"Grade {index}")
+    
