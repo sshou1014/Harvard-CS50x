@@ -1,0 +1,39 @@
+//This program prints out a pyramid by prompting the user for an integer between 1-8 inclusive
+#include <stdio.h>
+#include <cs50.h>
+
+int main(void){
+
+    //Prompt user for integer between 1-8 inclusive
+    int Height;
+    do
+    {
+        Height = get_int("Height: ");
+    }
+    while(Height<1 || Height>8);
+
+    //Prints out the pyramid based on the user input
+
+    for(int i = 0; i<Height; i++) //prints out the rows
+    {
+        for (int l = Height - 1; l > i; l--)
+        {
+            printf(" ");
+        }
+
+        for (int j = 0; j<=i; j++) //prints out the left side columns
+        {
+            printf("#");
+
+        }
+
+        printf("  ");
+
+        for (int k = 0; k<=i; k++) //prints out the right side columns
+        {
+            printf("#");
+        }
+        printf("\n");
+    }
+
+    }
