@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>Welcome to my webpage!</title>
+
+
+        <script>
+            function colorChange(_this) {
+                if (_this.id != "Debussy")
+                {
+                    _this.style.backgroundColor = "red";
+                    document.querySelector('#answer1').innerHTML = 'Incorrect!'
+                }
+
+                else
+                {
+                    _this.style.backgroundColor = "green";
+                    document.querySelector('#answer1').innerHTML = 'Correct'
+                }
+            }
+
+            function checkFree() {
+                let input = document.querySelector('input')
+                if (input.value != 'Steinway')
+                {
+                    input.style.backgroundColor = "red"
+                    document.querySelector('#answer2').innerHTML = 'Incorrect!'
+                }
+
+                else
+                {
+                    input.style.backgroundColor = "green"
+                    document.querySelector('#answer2').innerHTML = 'Correct!'
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class = "jumbtron">
+            <i><b><h1>Facts about Kendo</h1></b></i>
+            <div class = "section">
+                <h2>Part One: How to put on uniform?</h2>
+                <hr>
+                <h3>Step one, take your hakama and gi.</h3>
+                <ol>Please wash it first.
+                Why wouldn't you wash it.</ol>
+
+                <p id = "part1"></p>
+            </div>
+        </div>
+        <nav>
+  <ul>
+      <div id = "Page 1">
+          Content of home page.
+          <a href="about.html" onclick = "return show('Page2', 'Page1');">Show page 2</a>
+      </div>
+
+      <table>Ahahhahahaha</table>
+    <li><strong>Home</strong></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="clients.html">Our Clients</a></li>
+    <li><a href="products.html">Our Products</a></li>
+    <li><a href="services.html">Our Services</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+    </body>
+</html>
