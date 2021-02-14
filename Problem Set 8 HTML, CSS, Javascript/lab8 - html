@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+            // TODO: Add code to check answers to questions
+            //Function checks the id of the passed in button element and changes the color accordingly as well as the text underneath
+            function colorChange(_this) {
+                if (_this.id != "Debussy")
+                {
+                    _this.style.backgroundColor = "red";
+                    document.querySelector('#answer1').innerHTML = 'Incorrect!'
+                }
+
+                else
+                {
+                    _this.style.backgroundColor = "green";
+                    document.querySelector('#answer1').innerHTML = 'Correct'
+                }
+            }
+
+            function checkFree() {
+                let input = document.querySelector('input')
+                if (input.value != 'Steinway')
+                {
+                    input.style.backgroundColor = "red"
+                    document.querySelector('#answer2').innerHTML = 'Incorrect!'
+                }
+
+                else
+                {
+                    input.style.backgroundColor = "green"
+                    document.querySelector('#answer2').innerHTML = 'Correct!'
+                }
+            }
+
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <!-- TODO: Add multiple choice question here -->
+                <h3>Which composer created the famous piano piece "Clair de Lune"?</h3>
+
+                <button id="Chopin" onclick ="colorChange(this)">Frédéric Chopin</button>
+                <button id="Satie" onclick ="colorChange(this)">Erik Satie</button>
+                <button id="Liszt" onclick ="colorChange(this)">Franz Liszt</button>
+                <button id="Debussy" onclick ="colorChange(this)">Claude Debussy</button>
+                <button id="Mozart" onclick ="colorChange(this)">Wolfgang Amadeus Mozart</button>
+
+                <p id="answer1"></p>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <!-- TODO: Add free response question here -->
+                <h3>Which famous piano brand is headquartered in NYC?</h3>
+                <input type = "text"></input>
+                <button onclick = "checkFree()">Check Answer</button>
+                <p id="answer2"></p>
+
+            </div>
+
+        </div>
+    </body>
+</html>
